@@ -115,5 +115,3 @@ Para facilitar essa visualização, foi criado um bot para que o CFO possa consu
 </br>
 
 Para ter acesso a predição da loja, deve-se colocar "/" antes do número da loja. Exemplo: "/30".
-
-
