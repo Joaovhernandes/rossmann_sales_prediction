@@ -10,6 +10,7 @@ Os dados foram extraídos, tranformados, passaram pela Exploratory Data Analysis
 </br>
 <i>Fonte</i>: https://www.kaggle.com/competitions/rossmann-store-sales/data
 <h3>Descrição dos Atributos</h3>
+
 |  Atributos | Descrição  |
 |---|---|
 | Store | Id da loja  |
@@ -39,27 +40,43 @@ Os dados foram extraídos, tranformados, passaram pela Exploratory Data Analysis
 </ul>
 </br>
 <h2>Insights durante a EDA</h2>
+
 Durante a EDA do projeto, alguns insights foram descobertos e podem trazer para o negócio.
 </br>
 <h3>Lojas com competidores mais próximos vendem mais</h3>
+
 ![competition_distance](https://user-images.githubusercontent.com/101605197/201554941-32084751-f7c8-42f3-9417-de3bf144d565.png)
 </br>
+
+
 <h3>Lojas com competidores a mais tempo vendem menos</h3>
+
 ![competition_time](https://user-images.githubusercontent.com/101605197/201555007-fe662a74-8cb1-4b6e-8871-edf8e59783ca.png)
 </br>
+
+
 <h3>Lojas abertas durante o feriado de Natal vendem menos do que em outros feriados</h3>
+
 ![holidays](https://user-images.githubusercontent.com/101605197/201555069-4fd4a653-fb75-4ce2-9f97-72bf7f35dd97.png)
 </br>
+
+
 <h3>Lojas com promoções ativas por mais tempo tendem a vender menos</h3>
+
 ![tendencia](https://user-images.githubusercontent.com/101605197/201555202-b4641f04-0c39-4663-9210-741d54c0ba96.png)
 </br>
+
+
 <h2>Modelo</h2>
 Para a criação do modelo foram considerados os atributos da fase de EDA, que permitiu um conhecimento maior do negócio. Para isso, os atributos foram tratados para que o modelo pudesse ter a melhor performance.
 As variáveis que não possuiam Distribuição Normal foram tratadas para que pudessem ter esse tipo de distribuição, além das variáveis cíclicas (como os meses do ano) serem tratadas para um melhor entendimento do algortimo.
 </br>
 Após essa etapa, foi utilizado o algoritmo Boruta para complementar a seleção das variáveis.
 </br>
+
 Foram testados 5 modelos que apresentaram as performances abaixo:
+
+
 | Model Name  | MAE  | MAPE  | RMSE  |
 |---|---|---|---|
 | Average Model	  |  1354,80 | 0,46  | 1835.14  |
@@ -68,7 +85,10 @@ Foram testados 5 modelos que apresentaram as performances abaixo:
 |  Random Forest Regressor | 677.55  | 0,10  | 1007,86  |
 |  XGBoost Regressor | 868,95  | 0,13  | 1238,55  |
 </br>
+
 Os modelos tiveram os resultados abaixo após a etapa de Cross Validation:
+
+
 | Model Name  | MAE  | MAPE  | RMSE  |
 |---|---|---|---|
 | Linear Regression  | 2081,73 +/- 295,63  | 0,3 +/- 0,02  |  2952,52 +/- 468,37 |
@@ -76,20 +96,24 @@ Os modelos tiveram os resultados abaixo após a etapa de Cross Validation:
 |  Random Forest Regressor |  837,68 +/- 218,12 | 0,12 +/- 0,02  | 1256,33 +/- 318,28 |
 | XGBoost Regressor |  7047,94 +/- 587,59 | 0,95 +/- 0,0  | 7714,01 +/- 688,65 |
 </br>
+
 É posível notar que a Random Forest possui a melhor performance, contudo, foi escolhido o XGBoost, pois este modelo utiliza menos espaço em memória e apresenta uma performance próxima a Random Forest.
 Após a escolha, foi realizada a etapa de Hyperparameter Finetune e o modelo passou a apresentar as performances abaixo:
-
 </br>
+
 | Model Name  | MAE  | MAPE  | RMSE  |
 |---|---|---|---|
 | XGBoost Regressor | 760,19 | 0,11 | 1088,54 |
+
 </br>
 <h2>Resultados e Entrega</h2>
 Após o treinamento e avaliação da performance do modelo, o deploy foi feito no Heroku Cloud e permitiu que o CFO pudesse visualizar a predição das lojas.
 Para facilitar essa visualização, foi criado um bot para que o CFO possa consultar a qualquer momento a predição da loja.
 </br>
+
 <i>Link para o bot</i>: https://t.me/rossman_prediction_bot
 </br>
+
 Para ter acesso a predição da loja, deve-se colocar "/" antes do número da loja. Exemplo: "/30".
 
 
