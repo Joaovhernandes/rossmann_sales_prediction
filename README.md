@@ -70,11 +70,14 @@ Durante a EDA do projeto, alguns insights foram descobertos e podem trazer para 
 Após a etapa de EDA foi criado um dashboard no Power BI para alguns insights interessantes para a gestão.
 
 <h3>Dashboard das lojas Rossmann</h3>
+
 ![lojas_rossmann](https://user-images.githubusercontent.com/101605197/210293743-4fe5e4bf-eaeb-48a6-b00a-fc3082c046d4.png)
+</br>
 
 <h3>Dashboard das vendas ao longo do tempo</h3>
-![vendas_tempo](https://user-images.githubusercontent.com/101605197/210293965-45ccf46d-310c-4dc2-93c9-fe285443f368.png)
 
+![vendas_tempo](https://user-images.githubusercontent.com/101605197/210293965-45ccf46d-310c-4dc2-93c9-fe285443f368.png)
+</br>
 
 <h2>Modelo</h2>
 Para a criação do modelo foram considerados os atributos da fase de EDA, que permitiu um conhecimento maior do negócio. Para isso, os atributos foram tratados para que o modelo pudesse ter a melhor performance.
